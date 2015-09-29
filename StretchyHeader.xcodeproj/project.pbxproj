@@ -13,6 +13,8 @@
 		C74007951BBB087300E74B2C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C74007931BBB087300E74B2C /* Main.storyboard */; };
 		C74007971BBB087300E74B2C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C74007961BBB087300E74B2C /* Assets.xcassets */; };
 		C740079A1BBB087300E74B2C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C74007981BBB087300E74B2C /* LaunchScreen.storyboard */; };
+		C74007A21BBB0A2100E74B2C /* NewsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C74007A11BBB0A2100E74B2C /* NewsTableViewCell.swift */; settings = {ASSET_TAGS = (); }; };
+		C74007A41BBB0E6300E74B2C /* NewsItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = C74007A31BBB0E6300E74B2C /* NewsItem.swift */; settings = {ASSET_TAGS = (); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +26,8 @@
 		C74007961BBB087300E74B2C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C74007991BBB087300E74B2C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		C740079B1BBB087300E74B2C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C74007A11BBB0A2100E74B2C /* NewsTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewsTableViewCell.swift; sourceTree = "<group>"; };
+		C74007A31BBB0E6300E74B2C /* NewsItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewsItem.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,9 +64,11 @@
 				C740078F1BBB087300E74B2C /* MasterViewController.swift */,
 				C74007911BBB087300E74B2C /* DetailViewController.swift */,
 				C74007931BBB087300E74B2C /* Main.storyboard */,
+				C74007A11BBB0A2100E74B2C /* NewsTableViewCell.swift */,
 				C74007961BBB087300E74B2C /* Assets.xcassets */,
 				C74007981BBB087300E74B2C /* LaunchScreen.storyboard */,
 				C740079B1BBB087300E74B2C /* Info.plist */,
+				C74007A31BBB0E6300E74B2C /* NewsItem.swift */,
 			);
 			path = StretchyHeader;
 			sourceTree = "<group>";
@@ -138,7 +144,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				C74007921BBB087300E74B2C /* DetailViewController.swift in Sources */,
+				C74007A41BBB0E6300E74B2C /* NewsItem.swift in Sources */,
 				C74007901BBB087300E74B2C /* MasterViewController.swift in Sources */,
+				C74007A21BBB0A2100E74B2C /* NewsTableViewCell.swift in Sources */,
 				C740078E1BBB087300E74B2C /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
