@@ -27,16 +27,12 @@ class MasterViewController: UITableViewController {
         
         tableView.addSubview(headerView)
         
-        tableView.contentInset = UIEdgeInsetsMake(kTableHeaderHeight, 0, 0, 0)
-        headerView.frame = CGRect(x: 0, y: -kTableHeaderHeight, width: tableView.bounds.size.width, height: headerView.frame.size.height)
+        updateHeaderView()
         
         navigationController?.navigationBar.hidden = true
         
-
-        
         let dateFormatter = NSDateFormatter()
         dateFormatter.dateFormat = "MMMM dd"
-//        dateFormatter.dateStyle = .MediumStyle
         
         self.currentDate.text = dateFormatter.stringFromDate(NSDate())
             
@@ -62,10 +58,32 @@ class MasterViewController: UITableViewController {
     }
 
     func updateHeaderView() {
-        if -kTableHeaderHeight > tableView.contentOffset.y {
-            let frame = CGRect(x: headerView.frame.origin.x, y: tableView.contentOffset.y, width: tableView.bounds.size.width, height: -tableView.contentOffset.y)
+        tableView.contentInset = UIEdgeInsetsMake(kTableHeaderHeight-30, 0, 0, 0)
+        headerView.frame = CGRect(x: 0, y: -kTableHeaderHeight+30, width: tableView.bounds.size.width, height: headerView.frame.size.height)
+        
+        if -kTableHeaderHeight+30 > tableView.contentOffset.y {
+            let frame = CGRect(x: headerView.frame.origin.x, y: tableView.contentOffset.y, width: tableView.bounds.size.width, height: -tableView.contentOffset.y+30)
             headerView.frame = frame
         }
+        
+        addDiagonalMask()
+    }
+    
+    func addDiagonalMask() {
+        
+        let maskLayer = CAShapeLayer();
+        let trianglePath = UIBezierPath()
+        trianglePath.moveToPoint(CGPoint(x: headerView.frame.origin.x, y: headerView.frame.origin.y))
+        trianglePath.addLineToPoint(CGPoint(x: headerView.frame.origin.x, y: headerView.frame.size.height - 50))
+        trianglePath.addLineToPoint(CGPoint(x: headerView.frame.size.width, y: headerView.frame.size.height))
+        trianglePath.addLineToPoint(CGPoint(x: headerView.frame.size.width, y: headerView.frame.origin.y))
+        trianglePath.closePath()
+        
+        maskLayer.fillColor = UIColor.whiteColor().CGColor
+        maskLayer.backgroundColor = UIColor.clearColor().CGColor
+        maskLayer.path = trianglePath.CGPath
+        
+        headerView.layer.mask = maskLayer
     }
 
     // MARK: - Segues
